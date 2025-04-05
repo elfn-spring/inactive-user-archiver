@@ -3,7 +3,7 @@
 ## 🧰 Application Spring Boot + Spring Batch pour l'archivage automatique des utilisateurs inactifs  
 
 ### ❗ Problème à résoudre :   
-####    <p style="color:yellow; font-weight: bold;"> Eviter l’exécution concurrente d’un batch Spring embarqué dans une replicaset de plusieurs pods dans un cluster Kubernetes </p>
+####     **Eviter l’exécution concurrente d’un batch Spring embarqué dans une replicaset de plusieurs pods dans un cluster Kubernetes**
 
 ### 🔍:
 Ce système exécute un **traitement batch quotidien** pour détecter et **archiver les utilisateurs inactifs depuis plus de 90 jours**, à l’aide d’un `CronJob` Kubernetes.
