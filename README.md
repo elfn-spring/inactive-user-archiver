@@ -55,7 +55,7 @@ Voici l’organisation des fichiers du projet `inactive-user-archiver` :
 
 ---
 
-## 📊 Diagramme de flux (Mermaid)
+## 📊 Diagramme de flux
 
 ```mermaid
 flowchart TD
