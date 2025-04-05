@@ -32,7 +32,8 @@ Cette application exécute un **traitement batch quotidien** pour détecter et *
 
 Voici l’organisation des fichiers du projet `inactive-user-archiver` :
 
-![image](https://github.com/user-attachments/assets/aad2e334-5b16-4a50-a8bc-23267cf4c08e)
+![image](https://github.com/user-attachments/assets/bb4f65a9-7cc0-4d11-a99f-7c574111abe7)
+
 
 
 ---
