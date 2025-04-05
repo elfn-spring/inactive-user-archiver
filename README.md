@@ -3,6 +3,13 @@
 ## 🧰 Application Spring Boot + Spring Batch pour l'archivage automatique des utilisateurs inactifs
 
 Cette application exécute un **traitement batch quotidien** pour détecter et **archiver les utilisateurs inactifs depuis plus de 90 jours**, à l’aide d’un `CronJob` Kubernetes.
+**application elle-même** qui décide *quand* exécuter le batch, **mais Kubernetes** qui :
+
+1. Planifie l'exécution à intervalles réguliers (**`schedule`**)
+2. Crée un **pod éphémère** (temporaire) qui :
+    - Lance l’application Spring Boot
+    - Exécute le batch (via **`@PostConstruct`** ou logique d’init)
+    - Termine (le pod est détruit)
 
 ---
 
