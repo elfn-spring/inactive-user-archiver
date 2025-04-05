@@ -47,6 +47,7 @@ SpringBoot --> SpringBatch[⚙️ Spring Batch Job]
 SpringBatch --> DB1[(📂 Table users)]
 SpringBatch --> DB2[(📦 Table archived_users)]
 
+---
 
 src/
 └── main/
