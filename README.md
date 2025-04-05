@@ -29,7 +29,7 @@ Cette application exécute un **traitement batch quotidien** pour détecter et *
 
 ---
 
-### 📊 Diagramme de flux (Mermaid)
+## 📊 Diagramme de flux (Mermaid)
 
 ```mermaid
 flowchart TD
@@ -45,7 +45,8 @@ end
 PodBatch --> SpringBoot[☕ Spring Boot App]
 SpringBoot --> SpringBatch[⚙️ Spring Batch Job]
 SpringBatch --> DB1[(📂 Table users)]
-SpringBatch --> DB2[(📦 Table archived_users)]  
+SpringBatch --> DB2[(📦 Table archived_users)]
+
 
 ## 📂 Structure du projet
 
