@@ -9,8 +9,13 @@ Cette application exécute un **traitement batch quotidien** pour détecter et *
 2. Crée un **pod éphémère** (temporaire) qui :
     - Lance l’application Spring Boot
     - Exécute le batch (via **`@PostConstruct`** ou logique d’init)
-    - Termine (le pod est détruit)
+    - Termine (le pod est détruit)  
+### **🧠 Avantages de cette approche :**
 
+- Aucun risque de **concurrence** si tu as plusieurs pods ailleurs
+- Pas besoin de gérer une logique de planification avec **`@Scheduled`** ou des threads
+- Kubernetes gère tout : planification, isolation, redémarrage si échec, etc.
+- Très propre pour les **batchs ponctuels ou planifiés**
 ---
 
 ### 🧾 Fonctionnalités principales
