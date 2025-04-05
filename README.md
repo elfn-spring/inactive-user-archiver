@@ -31,18 +31,8 @@ Cette application exécute un **traitement batch quotidien** pour détecter et *
 ## 📂 Structure du projet
 
 Voici l’organisation des fichiers du projet `inactive-user-archiver` :
-src/
-└── main/
-    ├── java/com/example/batch/
-    │   ├── BatchApplication.java        # 🚀 Point d'entrée de l'application Spring Boot
-    │   ├── config/BatchConfig.java      # ⚙️ Configuration Spring Batch (étapes, lecteurs, writers, job)
-    │   ├── job/ArchiveInactiveUsersJob.java  # 📦 Définition du job batch
-    │   └── model/
-    │       ├── User.java                # 👤 Entité représentant un utilisateur actif
-    │       └── ArchivedUser.java        # 🗃️ Entité représentant un utilisateur archivé
-    └── resources/
-        ├── application.yml              # ⚙️ Configuration de l'application Spring Boot
-        └── schema.sql                   # 🗄️ Script SQL pour créer les tables (H2/PostgreSQL)
+
+![ChatGPT Image 5 avr  2025, 02_15_01](https://github.com/user-attachments/assets/bb7e9ba5-450c-4efd-a8a0-a6c351173f2f)
 
 ---
 
