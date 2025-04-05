@@ -33,6 +33,8 @@ Cette application exécute un **traitement batch quotidien** pour détecter et *
 Voici l’organisation des fichiers du projet `inactive-user-archiver` :
 
 ![ChatGPT Image 5 avr  2025, 02_15_01](https://github.com/user-attachments/assets/bb7e9ba5-450c-4efd-a8a0-a6c351173f2f)
+<img src="https://github.com/user/repo/assets/123456/structure.png" alt="Structure du projet" width="500"/>
+
 
 ---
 
