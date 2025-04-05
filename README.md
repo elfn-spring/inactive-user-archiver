@@ -18,14 +18,14 @@ Cette application exécute un **traitement batch quotidien** pour détecter et *
 
 ### 🛠️ Stack technique
 
-| Composant     | Description                        |
-|---------------|------------------------------------|
+| Composant | Description |
+|-----------|-------------|
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="24"/> Spring Boot | Application Java |
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="24"/> Spring Batch | Orchestration du traitement batch |
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="24"/> PostgreSQL / H2 | Base de données relationnelle |
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="24"/> Kubernetes | Orchestration des pods/applications |
 | <img src="https://img.icons8.com/fluency/48/cron-job.png" width="24"/> CronJob K8s | Déclencheur automatique quotidien |
----
+| <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="24"/> Docker | Conteneurisation de l’application batch |
 
 
 ## 📂 Structure du projet
