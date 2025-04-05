@@ -25,7 +25,24 @@ Cette application exécute un **traitement batch quotidien** pour détecter et *
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="24"/> PostgreSQL / H2 | Base de données relationnelle |
 | <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" width="24"/> Kubernetes | Orchestration des pods/applications |
 | <img src="https://img.icons8.com/fluency/48/cron-job.png" width="24"/> CronJob K8s | Déclencheur automatique quotidien |
+---
 
+
+## 📂 Structure du projet
+
+Voici l’organisation des fichiers du projet `inactive-user-archiver` :
+src/
+└── main/
+    ├── java/com/example/batch/
+    │   ├── BatchApplication.java        # 🚀 Point d'entrée de l'application Spring Boot
+    │   ├── config/BatchConfig.java      # ⚙️ Configuration Spring Batch (étapes, lecteurs, writers, job)
+    │   ├── job/ArchiveInactiveUsersJob.java  # 📦 Définition du job batch
+    │   └── model/
+    │       ├── User.java                # 👤 Entité représentant un utilisateur actif
+    │       └── ArchivedUser.java        # 🗃️ Entité représentant un utilisateur archivé
+    └── resources/
+        ├── application.yml              # ⚙️ Configuration de l'application Spring Boot
+        └── schema.sql                   # 🗄️ Script SQL pour créer les tables (H2/PostgreSQL)
 
 ---
 
@@ -46,22 +63,3 @@ PodBatch --> SpringBoot[☕ Spring Boot App]
 SpringBoot --> SpringBatch[⚙️ Spring Batch Job]
 SpringBatch --> DB1[(📂 Table users)]
 SpringBatch --> DB2[(📦 Table archived_users)]
-
----
-
-
-## 📂 Structure du projet
-
-Voici l’organisation des fichiers du projet `inactive-user-archiver` :
-src/
-└── main/
-    ├── java/com/example/batch/
-    │   ├── BatchApplication.java        # 🚀 Point d'entrée de l'application Spring Boot
-    │   ├── config/BatchConfig.java      # ⚙️ Configuration Spring Batch (étapes, lecteurs, writers, job)
-    │   ├── job/ArchiveInactiveUsersJob.java  # 📦 Définition du job batch
-    │   └── model/
-    │       ├── User.java                # 👤 Entité représentant un utilisateur actif
-    │       └── ArchivedUser.java        # 🗃️ Entité représentant un utilisateur archivé
-    └── resources/
-        ├── application.yml              # ⚙️ Configuration de l'application Spring Boot
-        └── schema.sql                   # 🗄️ Script SQL pour créer les tables (H2/PostgreSQL)
