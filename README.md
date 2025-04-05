@@ -7,7 +7,7 @@
 
 ### 🔍:
 Ce système exécute un **traitement batch quotidien** pour détecter et **archiver les utilisateurs inactifs depuis plus de 90 jours**, à l’aide d’un `CronJob` Kubernetes.
-**L'application elle-même** qui décide *quand* exécuter le batch, **mais Kubernetes** qui :
+**C'est l'application elle-même** qui décide *quand* exécuter le batch, **mais Kubernetes** qui :
 
 1. Planifie l'exécution à intervalles réguliers (**`schedule`**)
 2. Crée un **pod éphémère** (temporaire) qui :
