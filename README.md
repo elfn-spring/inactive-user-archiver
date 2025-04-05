@@ -37,9 +37,8 @@ Voici l’organisation des fichiers du projet `inactive-user-archiver` :
 
 ---  
 
-## 🛢️ Structure du projet
+## 🛢️ Structure du projet  
 
-Voici l’organisation des fichiers du projet `inactive-user-archiver` :
 ![image](https://github.com/user-attachments/assets/b5a158d5-db61-43c3-b101-f2891822c224)
 
 ---
