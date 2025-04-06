@@ -63,16 +63,19 @@ Voici l’organisation des fichiers du projet `inactive-user-archiver` :
 
 ```mermaid
 flowchart TD
-subgraph Kubernetes_Cluster
-K8sCronJob[Kubernetes CronJob Planification : 1 fois par jour]
-K8sCronJob --> PodBatch[📦 Pod Batch éphémère]
+    subgraph Kubernetes_Cluster
+        K8sCronJob[Kubernetes CronJob Planification : 1 fois par jour]
+        K8sCronJob --> PodBatch[📦 Pod Batch éphémère Résilience : restartPolicy=OnFailure]
 
-Pod1[🟦 Pod App 1]
-Pod2[🟦 Pod App 2]
-Pod3[🟦 Pod App 3]
-end
+        Pod1[🟦 Pod App 1]
+        Pod2[🟦 Pod App 2]
+        Pod3[🟦 Pod App 3]
+    end
 
-PodBatch --> SpringBoot[☕ Spring Boot App]
-SpringBoot --> SpringBatch[⚙️ Spring Batch Job]
-SpringBatch --> DB1[(📂 Table users)]
-SpringBatch --> DB2[(📦 Table archived_users)]
+    PodBatch --> SpringBoot[🌱 Spring Boot App]
+    SpringBoot --> SpringBatch[⚙️ Spring Batch Job]
+    SpringBatch --> DB1[(📂 Table users)]
+    SpringBatch --> DB2[(📦 Table archived_users)]
+
+    style PodBatch stroke:#f39c12,stroke-width:2px
+
