@@ -37,7 +37,7 @@ import java.util.List;
  */
 
 @Configuration
-@EnableBatchProcessing
+//@EnableBatchProcessing
 public class BatchConfig {
 
 
@@ -143,7 +143,7 @@ public class BatchConfig {
      * @param archiveStep le step d’archivage à exécuter
      * @return le Job complet prêt à être lancé
      */
-    @Bean
+    @Bean(name = "archiveInactiveUsersJobBatch")
     public Job archiveInactiveUsersJob(JobRepository jobRepository, Step archiveStep) {
         return new JobBuilder("archiveInactiveUsersJob", jobRepository)
                 .incrementer(new RunIdIncrementer())

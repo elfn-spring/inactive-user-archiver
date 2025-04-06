@@ -3,7 +3,7 @@ spring:
     name: inactive-user-archiver
 
   datasource:
-    url: jdbc:h2:mem:testdb
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS Schema
     driver-class-name: org.h2.Driver
     username: sa
     password:
@@ -19,4 +19,6 @@ spring:
 
   batch:
     jdbc:
-      initialize-schema: always
+      initialize-schema: never
+server:
+  port: 8085
