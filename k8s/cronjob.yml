@@ -1,0 +1,35 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: archive-inactive-users
+  labels:
+    app: inactive-user-archiver
+spec:
+#  schedule: "0 2 * * *" # Cadencement (Tous les jours à 2h)
+  schedule: "* * * * *" # Cadencement (Toutes les minutes)
+  jobTemplate:
+    spec:
+      backoffLimit: 3
+      activeDeadlineSeconds: 600
+      template:
+        spec:
+          restartPolicy: OnFailure
+          containers:
+            - name: batch-container
+              image: elfn/inactive-user-archiver:1.0.0
+              imagePullPolicy: IfNotPresent
+              volumeMounts:
+                - name: config-volume
+                  mountPath: /config
+                  readOnly: true
+              command: [ "java" ]
+              args:
+                - "-Dh2.console.settings.web-allow-others=true"
+                - "-jar"
+                - "app.jar"
+                - "--spring.config.location=classpath:/application.yml,/config/application-dev.yml"
+                - "--spring.profiles.active=dev"
+          volumes:
+            - name: config-volume
+              configMap:
+                name: inactive-user-config

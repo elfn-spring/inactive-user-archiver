@@ -1,0 +1,34 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: inactive-user-config
+  labels:
+    app: inactive-user-archiver
+data:
+  application.yml: |-
+    spring:
+      application:
+        name: inactive-user-archiver
+
+      datasource:
+        url: jdbc:h2:mem:testdb
+        driver-class-name: org.h2.Driver
+        username: sa
+        password:
+
+      h2:
+        console:
+          enabled: true
+
+      jpa:
+        hibernate:
+          ddl-auto: none
+        show-sql: true
+
+      batch:
+        jdbc:
+          initialize-schema: never
+
+    server:
+      port: 8080
+
