@@ -37,7 +37,7 @@ import java.util.List;
  */
 
 @Configuration
-//@EnableBatchProcessing
+@EnableBatchProcessing
 public class BatchConfig {
 
 
