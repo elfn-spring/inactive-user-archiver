@@ -54,7 +54,7 @@ public class BatchConfig {
     public JdbcCursorItemReader<Users> reader() {
         JdbcCursorItemReader<Users> reader = new JdbcCursorItemReader<>();
         reader.setDataSource(dataSource);
-        reader.setSql("SELECT * FROM users WHERE last_login_date < ?");
+        reader.setSql("SELECT * FROM USERS WHERE last_login_date < ?");
         reader.setPreparedStatementSetter(ps -> ps.setDate(1, java.sql.Date.valueOf(LocalDate.now().minusDays(90))));
         reader.setRowMapper((ResultSet rs, int rowNum) -> new Users(
                 rs.getLong("id"),

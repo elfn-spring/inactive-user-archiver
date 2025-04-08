@@ -3,22 +3,28 @@ spring:
     name: inactive-user-archiver
 
   datasource:
-    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1;INIT=CREATE SCHEMA IF NOT EXISTS Schema
     driver-class-name: org.h2.Driver
     username: sa
     password:
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  batch:
+    jdbc:
+      initialize-schema: always
+      schema-locations: classpath:schema.sql
+      data-locations: classpath:data.sql
 
   h2:
     console:
       enabled: true
 
-  jpa:
-    hibernate:
-      ddl-auto: none
-    show-sql: true
+  profiles:
+    active: local
 
-  batch:
-    jdbc:
-      initialize-schema: never
 server:
   port: 8085
+

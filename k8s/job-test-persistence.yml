@@ -1,0 +1,31 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: test-h2-persistence
+  labels:
+    app: inactive-user-archiver
+spec:
+  template:
+    metadata:
+      labels:
+        app: inactive-user-archiver
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: test-container
+          image: alpine:latest # Petite image légère
+          command: ["/bin/sh"]
+          args:
+            - "-c"
+            - |
+              echo "Test persistance : $(date)" >> /data/persistence-test.txt
+              echo "Fichier créé dans /data :"
+              cat /data/persistence-test.txt
+          volumeMounts:
+            - name: h2-data-volume
+              mountPath: /data
+      volumes:
+        - name: h2-data-volume
+          persistentVolumeClaim:
+            claimName: h2-data-pvc
+
