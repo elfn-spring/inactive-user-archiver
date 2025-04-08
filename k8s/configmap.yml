@@ -5,7 +5,7 @@ metadata:
   labels:
     app: inactive-user-archiver
 data:
-  application.yml: |-
+  application-dev.yml: |-
     spring:
       application:
         name: inactive-user-archiver
@@ -30,5 +30,4 @@ data:
           initialize-schema: never
 
     server:
-      port: 8080
-
+      port: 8085

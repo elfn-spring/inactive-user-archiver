@@ -1,0 +1,13 @@
+# 🎯 Permet de conserver les données de la base H2 (stockées dans /data) même après redémarrage des pods
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: h2-data-pvc
+  labels:
+    app: inactive-user-archiver
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
