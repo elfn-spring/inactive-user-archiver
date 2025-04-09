@@ -29,8 +29,8 @@ docker-push:
 
 docker-push-hub:
 #	@echo "📤 Push manuel vers Docker Hub avec tag : 2.0.0"
-	docker tag $(IMAGE_NAME) $(DOCKER_USER)/$(APP_NAME):2.0.0
-	docker push $(DOCKER_USER)/$(APP_NAME):2.0.0
+	docker tag $(IMAGE_NAME) $(DOCKER_USER)/$(APP_NAME):4.0.0
+	docker push $(DOCKER_USER)/$(APP_NAME):4.0.0
 
 #docker-run:
 #	docker run -p 8085:8085 --rm $(IMAGE_NAME)
@@ -49,3 +49,6 @@ k8s-test-persistence:
 
 k8s-service:
 	kubectl apply -f k8s/service.yml
+
+k8s-ingress:
+	kubectl apply -f k8s/ingress.yml
