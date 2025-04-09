@@ -14,7 +14,6 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "users")
-@NoArgsConstructor
 public class Users {
 
     @Id
@@ -30,8 +29,17 @@ public class Users {
     @Column(name = "last_login_date")
     private LocalDate lastLoginDate;
 
+    public Users() {
+    }
+
     public Users(Long id, String username, String email, LocalDate lastLoginDate) {
         this.id = id;
+        this.username = username;
+        this.email = email;
+        this.lastLoginDate = lastLoginDate;
+    }
+
+    public Users(String username, String email, LocalDate lastLoginDate) {
         this.username = username;
         this.email = email;
         this.lastLoginDate = lastLoginDate;
