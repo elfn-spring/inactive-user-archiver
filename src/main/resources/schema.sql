@@ -111,7 +111,7 @@ CREATE TABLE USERS
 
 CREATE TABLE ARCHIVED_USERS
 (
-    id            BIGINT PRIMARY KEY,
+    id            BIGINT PRIMARY KEY AUTO_INCREMENT,
     username      VARCHAR(255),
     email         VARCHAR(255),
     archived_date TIMESTAMP
