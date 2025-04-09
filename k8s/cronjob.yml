@@ -19,7 +19,7 @@ spec:
           restartPolicy: OnFailure
           containers:
             - name: batch-container
-              image: elfn/inactive-user-archiver:2.0.0
+              image: elfn/inactive-user-archiver:4.0.0
               imagePullPolicy: IfNotPresent
               volumeMounts:
                 - name: config-volume

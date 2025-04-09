@@ -2,7 +2,7 @@
 FROM eclipse-temurin:21-jdk
 
 # Étape 2 : Copier le JAR depuis le répertoire parent
-COPY ../target/inactive-user-archiver-0.0.2-SNAPSHOT.jar app.jar
+COPY ../target/inactive-user-archiver-0.0.4-SNAPSHOT.jar app.jar
 
 # ✅ Copie les fichiers de configuration et ressources (ex : schema.sql, application-dev.yml) dans l’image
 COPY ../src/main/resources/application.yml /app/resources/
