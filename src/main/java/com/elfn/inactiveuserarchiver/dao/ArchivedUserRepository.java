@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 /**
  * @Author: Elimane
  */
-public interface ArchivedUserRepository extends JpaRepository<Long, ArchivedUser> {
+public interface ArchivedUserRepository extends JpaRepository<ArchivedUser, Long> {
 }
